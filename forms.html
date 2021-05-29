@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body>
+    <center>
+        <hr>
+        <h1>Forms Demo</h1>
+        <hr>
+        <form action="index.html">
+            <div>
+                <p>
+                    <label for="username">Enter a username: </label>
+                    <input type="text" size="20" placeholder="Username" id="username" name="username">
+                </p>
+            </div>
+            <div>
+                <p>
+                    <label for="password">Enter a password: </label>
+                    <input type="password" size="20" placeholder="Password" id="password" name="password">
+            </div>
+            <div>
+                <p>
+                    <label for="color">Pick a color: </label>
+                    <input type="color" size="20" id="color" name="color">
+                </p>
+            </div>
+            <div>
+                <p>
+                    <label for="number">Choose lucky number: </label>
+                    <input type="number" size="20" placeholder="Enter a number" id="number" name="number" min="0"
+                        max="999999999">
+                </p>
+            </div>
+            <button type="submit">Go home</button>
+        </form>
+
+        <hr>
+        <h2>Hijacking Searches</h2>
+        <hr>
+        <!-- https://www.reddit.com/search/?q=silkie -->
+        <h3>Reddit</h3>
+        <form action="https://www.reddit.com/search/" target="_blank">
+            <input type="text" name="q" placeholder="Search...">
+            <button>Search reddit!</button>
+        </form>
+
+        <!-- https://www.google.com/search?q=pizza -->
+        <h3>Google</h3>
+        <form action="https://www.google.com/search" target="_blank">
+            <input type="text" name="q" placeholder="Search...">
+            <button>Search! </button>
+        </form>
+
+        <h3>YouTube</h3>
+        <!-- https://www.youtube.com/results?search_query=dog -->
+        <form action="https://www.youtube.com/results?" target="_blank">
+            <input type="text" name="search_query" id="ytsearch" placeholder="Search...">
+            <button type="submit">Look it up on YouTube</button>
+        </form>
+        <hr>
+        <h2>More Inputs</h2>
+        <hr>
+        <form action="">
+            <input type="checkbox" name="Agree_tos" id="agree" checked>
+            <label for="agree">I Agree to terms of this site.</label>
+            <p>
+                <input type="radio" name="cl_size" id="xs" value="xs">
+                <label for="xs">XS</label>
+
+                <input type="radio" name="cl_size" id="xxs" value="xxs">
+                <label for="xxs">XXS</label>
+
+                <input type="radio" name="cl_size" id="m" value="m">
+                <label for="m">M</label>
+
+                <input type="radio" name="cl_size" id="l" value="l">
+                <label for="l">L</label>
+
+                <button type="submit">Submit</button>
+            </p>
+            <p>
+                <label for="menu">Please select a meal</label>
+                <select name="meal" id="menu">
+                    <option value="" disabled selected>--Please choose an option--</option>
+                    <option value="Chicken">Chicken</option>
+                    <option value="Fish">Fish</option>
+                    <option value="Fish And Chips">Fish And Chips</option>
+                    <button type="submit">Order</button>
+                </select>
+            </p>
+            <p>
+                <label for="water">Select amount of water that you want to get:</label>
+                <input type="range" name="water_amount" id="water" min="0" max="200" step="5" value="100">
+                <button type="submit">Water pls</button>
+            </p>
+            <p>
+            <h4> <label for="note">Special notes for the chef</label></h4>
+            <textarea name="note" id="note" cols="30" rows="3" placeholder="Write a message..."></textarea>
+            </p>
+        </form>
+        <hr>
+        <h2>Validations Demo</h2>
+        <hr>
+        <form action="">
+            <div>
+                <label for="fname">Enter yours first name:</label>
+                <input type="text" name="fname" id="fname" required>
+            </div>
+            <div>
+                <label for="username2">Enter your first name:</label>
+                <input type="text" name="username2" id="username2" required minlength="5" maxlength="7">
+            </div>
+            <div>
+                <label for="email">Enter your email:</label>
+                <input type="email" name="email" id="email" required>
+                <button type="submit">Submit</button>
+            </div>
+
+
+        </form>
+    </center>
+</body>
+
+</html>

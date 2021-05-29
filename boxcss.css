@@ -1,0 +1,68 @@
+div{
+    width: 300px;
+    height: 350px;
+    color: rgb(255, 255, 255);
+    text-align:center;
+    box-sizing: border-box;
+   
+}
+h1{
+    background-color:lightblue;
+    padding-left: 30px;
+    width: 200px;
+}
+#one{
+    background-color:darkorange ;
+    border-width: 3px;
+    border-color: indigo;
+    border-style: dashed;
+    margin: 10px 0px;
+    
+}
+#two{
+    background-color:darkslateblue ;
+    border-width: 2px;
+    border-color: darkorange;
+    border-style: inset;
+    border-left-width: 5px;
+    border-top-width: 5px;
+    margin: 10px 0px;
+}
+#three{
+    background-color:green ;
+    border-width: 2px;
+    border-color: darkorange;
+    border-style:groove;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 10px 0px;
+}
+#card{
+    width: 240px;
+    border-style:solid;
+    border-width:2px;
+    border-color: grey;
+    
+    border-radius:5px;
+    height: 300px;
+    padding: 10px;
+    margin: 10px;
+ 
+}
+img{
+    border-radius: 50%;
+    width: 200px;
+      border-style:solid;
+    border-width:5px;
+    border-color: rgb(236,183,191);
+}
+.button1{
+    padding: 6px 12px 5px;
+    background-color: lightcoral;
+    border-radius: 30px;
+    font-size: 15px;
+}
+#h1chicken{
+    text-align: center;
+    width: 188px;
+}

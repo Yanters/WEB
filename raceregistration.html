@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Registration</title>
+</head>
+
+<body>
+    <h1>Race Registration</h1>
+    <hr>
+    <form action="">
+        <div>
+            <label for="fname">Name:</label>
+            <input type="text" name="fname" id="fname" required minlength="3" maxlength="20" placeholder="Name">
+            <label for="lname">Last Name:</label>
+            <input type="text" name="lname" id="lname" required minlength="3" maxlength="20" placeholder="Surname">
+        </div>
+        <div>
+            <h3>Select a race:</h3>
+            <div>
+                <input type="radio" name="typeofrace" id="fun5k" required value="fun5k">
+                <label for="fun5k">Fun Race 5k</label>
+            </div>
+            <div>
+                <input type="radio" name="typeofrace" id="halfmarat" required value="half-marathon">
+                <label for="halfmarat">Half Marathon</label>
+            </div>
+            <div>
+                <input type="radio" name="typeofrace" id="fullmarat" required value="full-marathon">
+                <label for="fullmarat">Full Marathon</label>
+            </div>
+
+        </div><br>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required placeholder="google@o2.com">
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required minlength="5" maxlength="25"
+                placeholder="Password">
+
+            <div>
+                <label for="agegroups">Select age group</label>
+                <select name="ageGroups" id="agegroups" required>
+                    <option value="" selected disabled>--Select Age Group--</option>
+                    <option value="14-18">14-18</option>
+                    <option value="18-45">18-45</option>
+                    <option value="45+">45+</option>
+                </select>
+            </div>
+            <div><br>
+                <button type="submit">Register</button>
+
+            </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+h1{
+    text-align: center;
+    font-weight:bolder;
+    text-decoration: rgb(9, 109, 223) overline wavy;
+    letter-spacing: 1mm;
+    font-size: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+h2 {
+    color: indianred;
+    text-align: center;
+    text-transform:capitalize;
+}
+button{
+    color: rgb(122, 18, 219);
+    background-color: wheat;
+}
+p{
+    color: navy;
+    text-align: left;
+    font-weight: 500;
+    line-height: 2;
+    font-family: cursive;
+}
+
+/* h3{
+    text-decoration: underline wavy plum;
+    letter-spacing: 20px;
+    font-size: 40px;
+    font-weight: 100;
+    text-decoration:
+    
+} */
