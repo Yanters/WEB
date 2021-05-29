@@ -1,0 +1,30 @@
+#one{
+    background-color: darkorange;
+    width: 800px;
+    height: 800px;
+}
+#done{
+    background-color: darkviolet;
+    width: 50%;
+    height: 50%;
+}
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 1.5em;
+    margin-left: 1em; /* It takes value of calculated font-size*/
+}
+article{
+    font-size: 30px;
+}
+p{
+    font-size: 0.8em;
+}
+button{
+    font-size: 1em;
+    padding: 0 1em;
+    border-radius: 0.5em;
+    background-color: #2e9d8f;
+    color: white;
+}
