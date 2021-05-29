@@ -1,7 +1,10 @@
+html{
+    font-size: 15px;
+}
 #one{
     background-color: darkorange;
-    width: 800px;
-    height: 800px;
+    width: 200px;
+    height: 200px;
 }
 #done{
     background-color: darkviolet;
@@ -11,18 +14,41 @@
 h1{
     font-size: 40px;
 }
-h2{
+#em h2{
     font-size: 1.5em;
     margin-left: 1em; /* It takes value of calculated font-size*/
 }
-article{
+#em{
     font-size: 30px;
 }
-p{
+#em p{
     font-size: 0.8em;
 }
-button{
+#em button{
     font-size: 1em;
+    padding: 0 1em;
+    border-radius: 0.5em;
+    background-color: #2e9d8f;
+    color: white;
+}
+
+#em ul{
+    font-size: 1.5em;
+}
+#rem h2{
+    font-size: 3rem;
+}
+#rem h3{
+    font-size: 2rem;
+}
+#rem ul{
+    font-size: 1.5rem;
+}
+#rem p{
+    font-size: 1.3rem;
+}
+#rem button{
+    font-size: 1.5rem;
     padding: 0 1em;
     border-radius: 0.5em;
     background-color: #2e9d8f;
