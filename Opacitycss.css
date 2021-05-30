@@ -1,9 +1,22 @@
 section{
-    background-color: firebrick;
-    width: 200px;
-    height: 200px;
+    background-color: rgb(219, 18, 18);
+    width: 400px;
+    height: 400px;
+    margin: 5px;
+    padding: 2px;
 }
 
 #rgba{
-    background-color:rgba(53, 236, 93,0.6);
+    background-color:rgba(255, 0, 85, 0.7);
+    width: 50%;
+    height: 50%;
+}
+div{
+    text-align: center;
+}
+#opacity{
+    opacity: 0.7;
+    width: 50%;
+    height: 50%;
+    background-color: coral;
 }
