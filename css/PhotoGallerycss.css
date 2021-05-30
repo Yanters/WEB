@@ -1,0 +1,14 @@
+img{
+    width: 30%;
+    margin: calc(10%/6);
+}
+nav{
+    text-transform: uppercase;
+    border-bottom: 2px solid #f1f1f1;
+    width: 30%;
+    margin-left: calc(10%/6);
+    font-family: 'Squada One', cursive;
+    font-size: 5rem;
+    border-width: 0.05em;
+    padding: 0.2em;
+}
