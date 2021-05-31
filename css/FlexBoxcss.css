@@ -71,6 +71,42 @@ section{
 #container12 div{
     width: 450px;
 }
+#container13 {      
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#container14 {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#container15 {
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+#container16 {
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+#container17 {
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+#container18 {
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
 section{
     margin: 10px auto;
 }
@@ -78,6 +114,8 @@ section{
 div{
     width: 200px;
     height: 200px;
+    font-size: 4em;
+    text-align: center;
 }
 h2{
     margin: 100px auto 0 auto;
