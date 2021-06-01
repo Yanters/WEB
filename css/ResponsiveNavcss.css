@@ -1,0 +1,86 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+h1{
+    font-size: 6em;
+    text-align: center;
+}
+nav{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+ul,li{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    /* border: 1px solid red; */
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    }
+#home{
+     padding-left: 50px ;
+}
+#signup{
+    padding-right: 50px;
+}
+/* purple up 800px (min-width */
+/* @media (max-width: 800px){
+    h1{
+        color: purple;
+    }
+} */
+/* purple below 800px (max-width */
+/* @media (max-width: 800px){
+    h1{
+        color: purple;
+    }
+} */
+/* range 600px-800px */
+/* @media (min-width: 600px) and (max-width: 800px){
+    h1{
+        color: purple;
+    }
+} */
+
+h1{
+    color: red;
+}
+@media (max-width: 1000px){
+  h1{
+      font-size: 3em;
+  }
+}
+@media (max-width: 768px){
+  h1{
+      font-size: 2.6em;
+  }
+  nav, nav ul,#home,#signup{
+      flex-direction: column;
+      align-items: center;
+      padding: unset;
+  }
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+}
+@media (max-width: 576px){
+  h1{
+      font-size: 2.0em;
+  }
+}
+@media (max-width: 350px){
+  h1{
+      font-size: 1.6em;
+  }
+}
+img{
+    padding-top: 20px;
+}
