@@ -212,3 +212,28 @@ body{
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
+
+main{
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid black;
+    height: 500px;  
+    display: flex;
+}
+
+.sidebar{
+    width: unset;
+    border: unset;
+    margin: unset;
+    height: unset;
+    background-color: #6930c3;
+    flex: 1 2 300px;
+}
+#maincontent{
+    background-color: #80ffdb;
+    flex: 2 1 1000px;
+    width: unset;
+    border: unset;
+    margin: unset;
+    height: unset;
+}
