@@ -1,0 +1,63 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+h1{
+    font-size: 6em;
+    text-align: center;
+}
+nav{
+    font-size: 1.5em;
+}
+ul,li{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+/* purple up 800px (min-width */
+/* @media (max-width: 800px){
+    h1{
+        color: purple;
+    }
+} */
+/* purple below 800px (max-width */
+/* @media (max-width: 800px){
+    h1{
+        color: purple;
+    }
+} */
+/* range 600px-800px */
+/* @media (min-width: 600px) and (max-width: 800px){
+    h1{
+        color: purple;
+    }
+} */
+
+h1{
+    color: red;
+}
+@media (min-width: 500px)
+{
+    h1{
+        color:royalblue
+    }
+}
+@media (min-width: 1000px)
+{
+    h1{
+        color:rgb(170, 22, 113)
+    }
+}
+@media (min-width: 1500px)
+{
+    h1{
+        color:rgb(209, 108, 26)
+    }
+}
+@media (orientation: landscape){
+    body{
+        background-color: skyblue;
+    }
+}
+img{
+    padding-top: 20px;
+}
