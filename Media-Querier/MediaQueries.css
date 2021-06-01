@@ -50,12 +50,12 @@ h1{
 @media (min-width: 1500px)
 {
     h1{
-        color:rgb(209, 108, 26)
+        color:rgb(255, 147, 59)
     }
 }
 @media (orientation: landscape){
     body{
-        background-color: skyblue;
+        background-color: rgb(189, 236, 255);
     }
 }
 img{
