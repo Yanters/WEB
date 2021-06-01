@@ -16,6 +16,7 @@ section div{
     background-color: turquoise;
     margin: 20px 0px;
     transition: margin-left 3s;
+    border: 1px solid black;
 }
 section:hover div{
 margin-left: 600px;
