@@ -6,10 +6,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parallax Scrolling</title>
+    <link rel="stylesheet" href="/Parallax-Scrolling/Parallax-Scrolling-css.css">
 </head>
 
 <body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="./img/stars.png" alt="" id="stars">
+        <img src="./img/moon.png" alt="" id="moon">
+        <img src="./img/mountains_behind.png" alt="" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="./img/mountains_front.png" alt="" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolor dignissimos quasi? Eius amet
+            consectetur totam, dolor hic inventore quam odit aperiam maiores accusamus error obcaecati eos, nulla
+            reprehenderit deleniti.
+            Adipisci esse eius repellat magnam harum, eveniet libero ipsa perspiciatis enim beatae, accusamus facilis
+            doloribus ut. Id, aliquid ullam! Error, ab atque quibusdam dignissimos impedit exercitationem officia quidem
+            ducimus expedita.
+            Officia doloremque, labore tenetur adipisci natus possimus numquam laborum mollitia aliquam? Cumque
+            temporibus velit eius quam, distinctio odit quas quasi, in voluptate deleniti vitae ab! Cupiditate ducimus
+            neque alias nisi?<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolor dignissimos
+            quasi? Eius amet Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad cum quasi numquam tempora
+            ipsum similique dolore corrupti consequuntur dolorum odit. Veritatis reiciendis accusamus quas incidunt
+            temporibus aliquid non sed quidem.
+            consectetur totam, dolor hic inventore quam odit aperiam maiores accusamus error obcaecati eos, nulla
+            reprehenderit deleniti. <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolor
+            dignissimos quasi? Eius amet
+            consectetur totam, dolor hic inventore quam odit aperiam maiores accusamus error obcaecati eos, nulla
+            reprehenderit deleniti.
+            Adipisci esse eius repellat magnam harum, eveniet libero ipsa perspiciatis enim beatae, accusamus facilis
+            doloribus ut. Id, aliquid ullam! Error, ab atque quibusdam dignissimos impedit exercitationem officia quidem
+            ducimus expedita.
+            Officia doloremque, labore tenetur adipisci natus possimus numquam laborum mollitia aliquam? Cumque
+            temporibus velit eius quam, distinctio odit quas quasi, in voluptate deleniti vitae ab! Cupiditate ducimus
+            neque alias nisi?<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolor dignissimos
+            quasi? Eius amet
+            consectetur totam, dolor hic inventore quam odit aperiam maiores accusamus error obcaecati eos, nulla
+            reprehenderit deleniti.
+            Adipisci esse eius repellat magnam harum, eveniet libero ipsa perspiciatis enim beatae, accusamus facilis
+            doloribus ut. Id, aliquid ullam! Error, ab atque quibusdam dignissimos impedit exercitationem officia quidem
+            ducimus expedita.
+            Officia doloremque, labore tenetur adipisci natus possimus numquam laborum mollitia aliquam? Cumque
+            temporibus velit eius quam, distinctio odit quas quasi, in voluptate deleniti vitae ab! Cupiditate ducimus
+            neque alias nisi?<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolor dignissimos
+            quasi? Eius amet Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad cum quasi numquam tempora
+            ipsum similique dolore corrupti consequuntur dolorum odit. Veritatis reiciendis accusamus quas incidunt
+            temporibus aliquid non sed quidem.
+            consectetur totam, dolor hic inventore quam odit aperiam maiores accusamus error obcaecati eos, nulla
+            reprehenderit deleniti. <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolor
+            dignissimos quasi? Eius amet
+            consectetur totam, dolor hic inventore quam odit aperiam maiores accusamus error obcaecati eos, nulla
+            reprehenderit deleniti.
+            Adipisci esse eius repellat magnam harum, eveniet libero ipsa perspiciatis enim beatae, accusamus facilis
+            doloribus ut. Id, aliquid ullam! Error, ab atque quibusdam dignissimos impedit exercitationem officia quidem
+            ducimus expedita.
+            Officia doloremque, labore tenetur adipisci natus possimus numquam laborum mollitia aliquam? Cumque
+            temporibus velit eius quam, distinctio odit quas quasi, in voluptate deleniti vitae ab! Cupiditate ducimus
+            neque alias nisi?</p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
 
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            stars.style.left = value / 10 + 'px';
+            moon.style.top = value / 3 + 'px';
+            mountains_behind.style.top = value / 7 + 'px';
+            // mountains_front.style.top = value / 7 + 'px';
+            text.style.marginRight = value * 3 + 'px';
+            text.style.marginTop = value * 0.9 + 'px';
+            btn.style.marginTop = value + 'px';
+            header.style.left = value + 'px';
+            header.style.top = value / 3 + 'px';
+        })
+    </script>
 </body>
 
 </html>
