@@ -1,0 +1,104 @@
+body{
+    background: #f5d9d5;
+    font-family: 'Nunito', sans-serif;
+
+}
+#candytext
+{
+    margin-left: 30px;
+    color: #ea1c2c;
+    font-size: 3rem;
+   
+}
+#mainNavbar {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#mainNavbar .nav-link{
+    color: white;
+    transition: 0.3s;
+}
+#mainNavbar .nav-link:hover{
+    color:#ea1c2c;
+}
+#headingGroup span{
+    color: #ea1c2c;;
+}
+#headingGroup h1{
+    font-weight: 100;
+    font-size: 4.5rem;
+}
+
+.blurb h2{
+    color: #ea1c2c;
+    font-weight: 100;
+    font-size: 4rem;
+}
+.blurb p{
+    color: #f31865;
+    font-weight: 100;
+    font-size: 1.5rem;
+    line-height: 2.0;
+}
+.content{
+    margin-top: 100px;
+}
+.imgl{
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+.imgr{
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+.img1{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 100px;
+}
+
+.scrolled{
+    background: rgb(222,192,222) !important;
+    transition: background 2s;
+}
+section{
+    margin: 0px;
+    padding: 0px
+}
+@media (max-width:1600px)
+{
+    #headingGroup h1{
+        font-weight: 100;
+        font-size: 3.5rem;
+    }
+}
+@media (max-width:1400px)
+{
+    #headingGroup h1{
+        font-weight: 100;
+        font-size: 3rem;
+    }
+}
+@media (max-width:1300px)
+{
+    #headingGroup h1{
+        font-weight: 100;
+        font-size: 2.5rem;
+    }
+  
+}
+@media (max-width:800px)
+{
+  
+    .img1,.imgr,.imgl{
+        border-radius: 100px;
+     }
+     .img1{
+         border-radius: 0px;
+         border-bottom-right-radius:100px ;
+         border-bottom-left-radius:100px ;
+     }
+     p{
+         margin-bottom: 50px;
+     }
+}
