@@ -18,7 +18,7 @@ let guess = '';
 let hint = '';
 let guessednumbers = "";
 let lose = true;
-let winningnumber = Math.floor(Math.random() * 100);
+let winningnumber = Math.floor(Math.random() * 1000);
 console.log(winningnumber);
 while (lose) {
     if (guess != null && guess != '') {
