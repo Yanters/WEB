@@ -1,108 +1,114 @@
-const p1Button = document.querySelector('#p1Button');
-const p2Button = document.querySelector('#p2Button');
-const p1Display = document.querySelector('#p1Display');
-const p2Display = document.querySelector('#p2Display');
+const p1 = {
+    score: 0,
+    button: document.querySelector('#p1Button'),
+    display: document.querySelector('#p1Display'),
+}
+
+const p2 = {
+    score: 0,
+    button: document.querySelector('#p2Button'),
+    display: document.querySelector('#p2Display'),
+}
+
 const reset = document.querySelector('#reset');
 const winningScoreSelect = document.querySelector('#playto');
 const gameType = document.querySelector('#gametype');
+const body = document.querySelector('body');
 
-let p1Score = 0;
-let p2Score = 0;
 let winningscore = parseInt(winningScoreSelect.value);
 let isGameover = false;
 
 winningScoreSelect.addEventListener('change', function () {
-    winningscore = parseInt(this.value);
+    // winningscore = parseInt(this.value);
     ResetGame();
 })
-gameType.addEventListener('change', ResetGame)
 
-p1Button.addEventListener('click', () => {
+function updateScore(player, opponent) {
     if (!isGameover) {
-        p1Score++;
-        if (p1Score === winningscore) {
+        player.score++;
+        if (player.score === winningscore) {
             if (gameType.value === 'points') {
                 isGameover = true;
-                p1Display.classList.add('winner');
-                p2Display.classList.add('loser');
-                p1Button.disabled = true;
-                p2Button.disabled = true;
+                player.display.classList.add('winner');
+                opponent.display.classList.add('loser');
+                player.button.disabled = true;
+                opponent.button.disabled = true;
             } else if (gameType.value === 'dominance') {
-                if ((p1Score - p2Score) >= 2) {
+                if ((player.score - opponent.score) >= 2) {
                     isGameover = true;
-                    p1Display.classList.add('winner');
-                    p2Display.classList.add('loser');
-                    p1Button.disabled = true;
-                    p2Button.disabled = true;
+                    player.display.classList.add('winner');
+                    opponent.display.classList.add('loser');
+                    player.button.disabled = true;
+                    opponent.button.disabled = true;
                 } else {
                     winningscore++;
                 }
             }
         }
         checkingScore();
-        p1Display.textContent = p1Score;
+        player.display.textContent = player.score;
     }
+    console.log(`Player 1: ${p1.score} \nPlayer 2: ${p2.score}`)
+}
 
+gameType.addEventListener('change', ResetGame);
 
+p1Button.addEventListener('click', function () { updateScore(p1, p2) });
 
-})
-p2Button.addEventListener('click', () => {
-    if (!isGameover) {
-        p2Score++;
-        if (p2Score === winningscore) {
-            if (gameType.value === 'points') {
-                isGameover = true;
-                p2Display.classList.add('winner');
-                p1Display.classList.add('loser');
-                p1Button.disabled = true;
-                p2Button.disabled = true;
-            } else if (gameType.value === 'dominance') {
-                if ((p2Score - p1Score) >= 2) {
-                    isGameover = true;
-                    p2Display.classList.add('winner');
-                    p1Display.classList.add('loser');
-                    p1Button.disabled = true;
-                    p2Button.disabled = true;
-                } else {
-                    winningscore++;
-                }
-            }
-        }
-        checkingScore();
-        p2Display.textContent = p2Score;
-    }
-})
+p2Button.addEventListener('click', function () { updateScore(p2, p1) });
 
 reset.addEventListener('click', ResetGame)
 
 function ResetGame() {
-    p1Button.disabled = false;
-    p2Button.disabled = false;
-    p1Score = 0;
-    p1Display.textContent = p1Score;
-    p2Score = 0;
-    p2Display.textContent = p2Score;
+    console.log('Reseted');
+
+    for (let p of [p1, p2]) {
+        p.button.disabled = false;
+        p.score = 0;
+        p.display.textContent = p.score;
+        p.display.classList.remove('winner', 'loser', 'winning', 'losing', 'draw');
+    }
+
     isGameover = false;
-    p1Display.classList.remove('winner', 'loser', 'winning', 'losing', 'draw');
-    p2Display.classList.remove('winner', 'loser', 'winning', 'losing', 'draw');
     winningscore = parseInt(winningScoreSelect.value);
 }
 
+body.addEventListener('keydown', (e) => {
+    console.log(`${e.key} has been pressed`);
+    switch (e.key) {
+        case 'r':
+        case 'ArrowDown':
+            ResetGame();
+            break;
+        case '2':
+        case 'ArrowRight':
+        case 'd':
+            updateScore(p2, p1)
+            break;
+        case '1':
+        case 'ArrowLeft':
+        case 'a':
+            updateScore(p1, p2)
+            break;
+
+    }
+})
+
 function checkingScore() {
-    p1Display.classList.remove('winning', 'losing', 'draw');
-    p2Display.classList.remove('winning', 'losing', 'draw');
-    if (p1Score !== winningscore && p2Score !== winningscore) {
-        if (p1Score > p2Score) {
+    p1.display.classList.remove('winning', 'losing', 'draw');
+    p2.display.classList.remove('winning', 'losing', 'draw');
+    if (p1.score !== winningscore && p2.score !== winningscore) {
+        if (p1.score > p2.score) {
 
-            p1Display.classList.add('winning');
-            p2Display.classList.add('losing');
+            p1.display.classList.add('winning');
+            p2.display.classList.add('losing');
 
-        } else if (p1Score < p2Score) {
-            p2Display.classList.add('winning');
-            p1Display.classList.add('losing');
+        } else if (p1.score < p2.score) {
+            p2.display.classList.add('winning');
+            p1.display.classList.add('losing');
         } else {
-            p1Display.classList.add('draw');
-            p2Display.classList.add('draw');
+            p1.display.classList.add('draw');
+            p2.display.classList.add('draw');
         }
     }
 
