@@ -1,5 +1,5 @@
 {
-  "name": "npmart",
+  "name": "firstapp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,10 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Yanter",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "colors": "^1.4.0",
-    "figlet": "^1.5.0"
+    "express": "^4.17.1"
   }
 }
