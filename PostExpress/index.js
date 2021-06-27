@@ -1,30 +1,34 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const methodOverride = require('method-override');
+const { v4: uuid } = require('uuid');
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(methodOverride('_method'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-const comments = [
+let comments = [
     {
-        id: 1,
+        id: uuid(),
         username: 'Todd',
         comment: 'lol that is so funny!'
     },
     {
-        id: 2,
+        id: uuid(),
         username: 'Skyler',
         comment: 'I like playing soccer'
     },
     {
-        id: 3,
+        id: uuid(),
         username: 'Sk8ter',
         comment: 'Delete your account Todd'
     },
     {
-        id: 4,
+        id: uuid(),
         username: 'onlyxd',
         comment: 'xD xD xDDDDDDD'
     }
@@ -40,18 +44,39 @@ app.get('/comments/new', (req, res) => {
 
 app.post('/comments', (req, res) => {
     const { username, comment } = req.body;
-    comments.push({ username, comment });
+    comments.push({ username, comment, id: uuid() });
     res.redirect('/comments');
 })
 
 app.get('/comments/:id', (req, res) => {
     const { id } = req.params;
     const comment = comments.find(c => {
-        if (c.id === parseInt(id)) {
+        if (c.id === id) {
             return c;
         };
     })
     res.render('comments/show', { comment });
+})
+
+app.get('/comments/:id/edit', (req, res) => {
+    const { id } = req.params;
+    const comment = comments.find(c => c.id === id);
+    res.render('comments/edit', { comment });
+})
+
+app.patch('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    const newCommentText = req.body.comment;
+    const foundComment = comments.find(c => c.id === id);
+    foundComment.comment = newCommentText;
+    res.redirect('/comments')
+})
+
+app.delete('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    comments = comments.filter(c => c.id !== id)
+    res.redirect('/comments');
+
 })
 
 app.get('/tacos', (req, res) => {
