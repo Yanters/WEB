@@ -42,7 +42,39 @@ const productSchema = new mongoose.Schema({
     }
 });
 
+productSchema.methods.greet = function () {
+    console.log('Hi there!')
+    console.log(`- ${this.name}`)
+}
+
+productSchema.methods.toggleOnSale = function () {
+    this.onSale = !this.onSale;
+    return this.save();
+}
+
+productSchema.methods.addCategory = function (newCategory) {
+    this.categories.push(newCategory);
+    return this.save();
+}
+
+productSchema.statics.fireSale = function () {
+    return this.updateMany({}, { price: 0, onSale: true });
+}
+
 const Product = mongoose.model('Product', productSchema);
+
+const findProduct = async () => {
+    const foundProduct = await Product.findOne({ name: 'Bike Helmet' });
+    // foundProduct.greet();
+    console.log(foundProduct);
+    await foundProduct.toggleOnSale();
+    console.log(foundProduct);
+    await foundProduct.addCategory('Outdoors');
+    console.log(foundProduct);
+}
+findProduct();
+
+Product.fireSale().then(res => console.log(res));
 
 // const bike = new Product({ name: 'Cycling Jersy', price: 29.99, categories: ['Cycling'], size: 'M' })
 // bike.save()
