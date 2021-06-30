@@ -5,26 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Product</title>
+    <title>Edit <%= product.name %>
+    </title>
 </head>
 
 <body>
-    <h1>Add a Product</h1>
-    <form method="POST" action="/products">
+    <h1>Edit Product</h1>
+    <form method="POST" action="/products/<%= product._id %>?_method=PUT">
         <label for="name">Product's name:</label>
-        <input type="text" name="name" id="name" placeholder="Product's name...">
+        <input type="text" name="name" id="name" placeholder="Product's name..." value="<%= product.name %> ">
         <label for="price">Price (Unit):</label>
-        <input type="number" name="price" id="price" step="0.01" placeholder="Product's price...">
+        <input type="number" name="price" id="price" step="0.01" placeholder="Product's price..."
+            value="<%= product.price %>">
         <label for="category">Select Category:</label>
         <select name="category" id="category">
             <% for(let category of categories){ %>
-                <option value="<%=category%>">
+                <option value="<%=category%>" <%=product.category===category ? 'selected' : '' %> >
                     <%=category%>
                 </option>
                 <% } %>
         </select>
-        <button>Add Product</button>
+        <button>Edit Product</button>
     </form>
+    <a href="/products/<%= product._id %> ">Cancel</a>
 </body>
 
 </html>
