@@ -7,13 +7,19 @@ const morgan = require('morgan');
 
 app.use(morgan('common'));
 
+app.use((req, res, next) => {
+    req.requestTime = Date.now();
+    console.log(req.method, req.path);
+    next();
+})
+
 // http://localhost:3000/x?password=somePassword
 const verifyPassword = ((req, res, next) => {
     const { password } = req.query;
     if (password === 'somePassword') {
-        next();
+        return next();
     }
-    res.send('Not for you ;)\nhttp://localhost:3000/secret?password=somePassword')
+    res.send('Sorry you need a password \n http://localhost:3000/secret?password=somePassword')
 })
 
 app.get('/', (req, res) => {
@@ -26,7 +32,7 @@ app.get('/dogs', (req, res) => {
 
 //middleware ( verifyPassword )
 app.get('/secret', verifyPassword, (req, res) => {
-    res.send('My secret is: ***** **** ******* ** *****')
+    res.send('My secret is: ***** **** ******* ** *****');
 })
 
 app.use((req, res) => {
