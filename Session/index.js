@@ -26,7 +26,7 @@ app.get('/register', (req, res) => {
 
 app.get('/greet', (req, res) => {
     const { username = 'Anonymous' } = req.session;
-    res.send(`Hello there, ${username}`)
+    res.send(`Hello there, ${username}`);
 
 })
 
