@@ -8,13 +8,22 @@ import ExpensesFilter from "./ExpensesFilter";
 const Expenses = (props) => {
   const [year, getSelectedYear] = useState("2021");
 
-  const expenseList = props.expenses.map((item) => (
+  // Old rendering
+  // const expenseList = props.expenses.map((item) => (
+  //   <ExpenseItem expenses={item} key={item.id.toString()} />
+  // ));
+
+  // Parsing 'year' to Int to not have a warning in console.
+  const specyfivList = props.expenses.filter((item) => {
+    return item.date.getFullYear() === parseInt(year);
+  });
+
+  const expenseList = specyfivList.map((item) => (
     <ExpenseItem expenses={item} key={item.id.toString()} />
   ));
 
   const getSelectedYearHandler = (year) => {
     getSelectedYear(year);
-    console.log(year);
   };
 
   return (
