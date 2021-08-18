@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
 import "./Expenses.css";
-import ExpenseItem from "./ExpenseItem";
+// import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
   const [year, getSelectedYear] = useState("2021");
@@ -18,10 +19,6 @@ const Expenses = (props) => {
     return item.date.getFullYear() === parseInt(year);
   });
 
-  const expenseList = specyfivList.map((item) => (
-    <ExpenseItem expenses={item} key={item.id.toString()} />
-  ));
-
   const getSelectedYearHandler = (year) => {
     getSelectedYear(year);
   };
@@ -33,7 +30,7 @@ const Expenses = (props) => {
           selectedYear={year}
           getSelectedYear={getSelectedYearHandler}
         />
-        {expenseList}
+        <ExpensesList expenses={specyfivList} />
       </Card>
     </div>
   );
