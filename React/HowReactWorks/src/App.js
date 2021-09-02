@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import Button from "./components/UI/Button/Button";
 import "./App.css";
+import DemoOutput from "./components/Demo/DemoOutput";
 
 function App() {
   const [showParagraph, setShowParagraph] = useState(false);
-
+  console.log("App working.");
   const toggleParagraph = () => {
     setShowParagraph((prevParagraph) => !prevParagraph);
   };
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      {showParagraph && <p>Paragraph to show/hide.</p>}
+      <DemoOutput show={false} />
       <Button onClick={toggleParagraph}>Click Me!</Button>
     </div>
   );
