@@ -38,6 +38,7 @@ class Users extends Component {
     );
   }
 }
+
 // const Users = () => {
 //   const [showUsers, setShowUsers] = useState(true);
 
@@ -56,7 +57,7 @@ class Users extends Component {
 //   return (
 //     <div className={classes.users}>
 //       <button onClick={toggleUsersHandler}>
-//         {showUsers ? "Hide" : "Show"} Users
+//         {showUsers ? 'Hide' : 'Show'} Users
 //       </button>
 //       {showUsers && usersList}
 //     </div>
