@@ -41,7 +41,7 @@ const useInput = (validateValue) => {
   };
 
   const inputBlureHandler = (event) => {
-    dispatch({ type: "Blur" });
+    dispatch({ type: "Blure" });
   };
 
   const reset = () => {
