@@ -4,8 +4,8 @@ import Cart from "./components/Cart/Cart";
 import Layout from "./components/Layout/Layout";
 import Products from "./components/Shop/Products";
 import Notification from "./components/UI/Notification";
-import { sendCartData } from "./store/cart-slice";
-import { uiActions } from "./store/ui-slice";
+import { fetchCartData, sendCartData } from "./store/cart-actions";
+// import { uiActions } from "./store/ui-slice";
 
 let isInitial = true; //Will NOT change if Component will rendered again
 
@@ -14,7 +14,7 @@ function App() {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const notification = useSelector((state) => state.ui.notification);
-  console.log(notification);
+  // console.log(notification);
   // useEffect(() => {
   //   console.log("useEffect");
   //   const sendCartData = async () => {
@@ -58,12 +58,17 @@ function App() {
   // }, [cart, dispatch]);
 
   useEffect(() => {
+    dispatch(fetchCartData());
+  }, [dispatch]);
+
+  useEffect(() => {
     if (isInitial) {
       isInitial = false;
       return;
     }
-
-    dispatch(sendCartData(cart));
+    if (cart.changed) {
+      dispatch(sendCartData(cart));
+    }
   }, [cart, dispatch]);
 
   return (
