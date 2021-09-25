@@ -11,7 +11,7 @@ const ProductItem = React.memo((props) => {
   // const dispatch = useDispatch();
   // const toggleFav = useContext(ProductContext).toggleFav;
 
-  const dispatch = useStore()[1];
+  const dispatch = useStore(false)[1];
 
   const toggleFavHandler = () => {
     // dispatch(toggleFav(props.id));
