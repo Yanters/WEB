@@ -1,3 +1,3 @@
 # WEB
-Playing with HTML+CSS+JS
+Progress with HTML+CSS+JS, React.JS
 Teaching myself.
